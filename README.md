@@ -2,8 +2,8 @@
 
 SEULTA: Simple Ensemble of Unsupervised Learners for Taxonomic Assignment
 
-The SEULTA pipeline is shown in the below figure.
-![SEULTA testing](https://github.com/user-attachments/assets/a19b69bf-afd7-400c-bb2c-0a4af1b941e8)
+The SEULTA pipeline is shown in the below figure. <br />
+![SEULTA testing](https://github.com/user-attachments/assets/a19b69bf-afd7-400c-bb2c-0a4af1b941e8) <br />
 
 First, we split the input file into the sequences and the labels. From the sequences, we calculate the 7-mer count, 
 which is reduced to two dimensions with t-SNE (using a PCA initiation, and Manhattan distance as the metric), and the 
@@ -23,7 +23,11 @@ silhouette coefficient, in the same manner as before. In order to be able to gen
 map the model labels to the actual labels by use of the Hungarian Algorithm; that is, we find the optimal assignment 
 between the clusters the models found and the true classes, such that the highest number of points are correctly 
 assigned. We then return the mapped labels, the silhouette coefficient (found between the cluster labels and the 
-normalized 7-mer counts), and the clustering accuracy.
+normalized 7-mer counts), and the clustering accuracy. <br />
+
+SEULTA outperforms simple learners, and closely approaches the performance of complex learner ensembles (DeLUCS-F, the SOTA), as shown in the figure below. K-means is used as the baseline due to its common use in this field [11-16]. <br />
+
+![image](https://github.com/user-attachments/assets/64a57afe-056b-40ea-be67-6d4c1073e22e) <br />
 
 
 # References
